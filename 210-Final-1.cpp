@@ -14,7 +14,7 @@ const int SIM_MIN = 2, SIM_MAX = 5;
 void outputAll(const map<string,int>& );
 void findMax(const map<string, int>& );
 int randomValue(int, int);
-void findRange();
+void findRange(const map<string, int>&, int, int);
 
 int main(){
     srand(time(0));
@@ -38,6 +38,9 @@ int main(){
     findMax(traffic);
 
     int sim = randomValue(SIM_MIN, SIM_MAX);
+    for(int i = 0; i < sim; ++i){
+
+    }
 
     return 0;
 }
@@ -67,4 +70,8 @@ void findMax(const map<string, int>& t){
 
 int randomValue(int s_min, int s_max){
     return s_min + rand()% (s_max - s_min + 1);  
+}
+
+void findRange(const map<string, int>& t, int r_min, int r_max){
+
 }
