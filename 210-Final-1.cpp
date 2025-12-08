@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <random>
+#include <chrono>
 using namespace std;
 
 const int MIN_TRF = 1, MAX_TRF = 35;
@@ -39,6 +40,12 @@ int main(){
 
     int sim = randomValue(SIM_MIN, SIM_MAX);
 
+    cout << "Test" << endl;
+    for(int i = 0; i < 10; i++){
+        cout << sim << endl;
+    }
+    
+
     return 0;
 }
 
@@ -66,6 +73,6 @@ void findMax(const map<string, int>& t){
 }
 
 int randomValue(int s_min, int s_max){
-    return rand
+    return rand()%s_max + s_min;  
 
 }
