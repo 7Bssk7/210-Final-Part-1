@@ -9,6 +9,7 @@ using namespace std;
 
 
 void outputAll(const map<string,int>& );
+void findMax(const map<string, int>& );
 
 int main(){
     ifstream inputFile("210-final-1-FA25.txt");
@@ -36,4 +37,9 @@ void outputAll(const map<string, int>& t){
     for(auto it = t.begin(); it != t.end(); ++it){
         cout << it->first << " " << it->second << endl;
     }
+}
+
+void findmax(const map<string, int>& t){
+    auto it;
+
 }
