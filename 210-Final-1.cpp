@@ -5,14 +5,19 @@
 #include <map>
 #include <string>
 #include <vector>
+#include <random>
 using namespace std;
 
 const int MIN_TRF = 1, MAX_TRF = 35;
+const int SIM_MIN = 2, SIM_MAX = 5;
 
 void outputAll(const map<string,int>& );
 void findMax(const map<string, int>& );
+int randomValue(int, int);
+void findRange();
 
 int main(){
+    srand(time(0));
     ifstream inputFile("210-final-1-FA25.txt");
     string src, dest;
     map<string, int> traffic;
@@ -31,6 +36,8 @@ int main(){
     outputAll(traffic);
 
     findMax(traffic);
+
+    int sim = randomValue(SIM_MIN, SIM_MAX);
 
     return 0;
 }
@@ -56,4 +63,9 @@ void findMax(const map<string, int>& t){
             cout << it->first << " " << it->second << endl;
         }
     }
+}
+
+int randomValue(int s_min, int s_max){
+    return rand
+
 }
