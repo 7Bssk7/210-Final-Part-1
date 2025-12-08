@@ -50,5 +50,9 @@ void findMax(const map<string, int>& t){
     }
 
     cout << "\nBusiest airport(s) with count "<< maxTrf << " :" << endl;
-
+    for(auto it = t.begin(); it != t.end(); ++it){
+        if(it->second == maxTrf){
+            cout << it->first << " " << it->second << endl;
+        }
+    }
 }
