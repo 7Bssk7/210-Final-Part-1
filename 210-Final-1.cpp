@@ -29,6 +29,8 @@ int main(){
     }
     outputAll(traffic);
 
+    findMax(traffic);
+
     return 0;
 }
 
@@ -39,13 +41,14 @@ void outputAll(const map<string, int>& t){
     }
 }
 
-void findmax(const map<string, int>& t){
+void findMax(const map<string, int>& t){
     int maxTrf = 0;
     for(auto it = t.begin(); it != t.end(); ++it){
         if(it->second > maxTrf){
             maxTrf = it->second;
         }
-
     }
+
+    cout << "\nBusiest airport(s) with count "<< maxTrf << " :" << endl;
 
 }
