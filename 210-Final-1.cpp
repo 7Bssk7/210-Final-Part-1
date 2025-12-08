@@ -12,6 +12,16 @@ int main(){
     string src, dest;
     map<string, int> traffic;
 
+    while(inputFile >> src >> dest){
+        if(traffic.find(src) == traffic.end()){
+            traffic[src] = 0;
+        }
+        if(traffic.find(dest) == traffic.end()){
+            traffic[dest] = 0;
+        }
+
+    }
+
 
 
     return 0;
