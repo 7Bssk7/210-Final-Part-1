@@ -8,9 +8,12 @@
 #include <random>
 using namespace std;
 
+// Constants for possible traffic values
 const int MIN_TRF = 1, MAX_TRF = 35;
+// Constants fpr the number of random simulations
 const int SIM_MIN = 0, SIM_MAX = 3;
 
+// Function prototypes
 void outputAll(const map<string,int>& );
 void findMax(const map<string, int>& );
 int randomValue(int, int);
@@ -22,13 +25,17 @@ int main(){
     string src, dest;
     map<string, int> traffic;
 
+    // Read file line by line,  reading first aitport code into src and second airport code into dest
     while(inputFile >> src >> dest){
+        // If airport in src not yet in map, initialize with 0(count)
         if(traffic.find(src) == traffic.end()){
             traffic[src] = 0;
         }
+        // If airport in dest not yet in map, initialize with 0(count)
         if(traffic.find(dest) == traffic.end()){
             traffic[dest] = 0;
         }
+        // Increment traffic counts for both airports that we read from the file
         traffic[src] += 1;
         traffic[dest] += 1;
 
@@ -46,7 +53,6 @@ int main(){
     for(int i = 0; i < sim; ++i){
         int trf_min = randomValue(MIN_TRF, MAX_TRF);
         int trf_max = randomValue(trf_min, MAX_TRF);
-
         findRange(traffic, trf_min, trf_max);
     }
 
