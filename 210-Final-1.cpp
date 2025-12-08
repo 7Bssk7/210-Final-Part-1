@@ -9,7 +9,7 @@
 using namespace std;
 
 const int MIN_TRF = 1, MAX_TRF = 35;
-const int SIM_MIN = 2, SIM_MAX = 5;
+const int SIM_MIN = 0, SIM_MAX = 3;
 
 void outputAll(const map<string,int>& );
 void findMax(const map<string, int>& );
@@ -39,8 +39,10 @@ int main(){
 
     int sim = randomValue(SIM_MIN, SIM_MAX);
     // TEST 
-    findRange(traffic, 5, 8);
+    // findRange(traffic, 5, 8);
 
+    findRange(traffic, 3, 10);
+    findRange(traffic, 8, 15);
     for(int i = 0; i < sim; ++i){
         int trf_min = randomValue(MIN_TRF, MAX_TRF);
         int trf_max = randomValue(trf_min, MAX_TRF);
