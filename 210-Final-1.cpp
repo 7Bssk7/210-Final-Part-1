@@ -22,6 +22,8 @@ int main(){
         if(traffic.find(dest) == traffic.end()){
             traffic[dest] = 0;
         }
+        traffic[src] += 1;
+        traffic[dest] += 1;
 
     }
     outputAll(traffic);
