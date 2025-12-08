@@ -39,7 +39,10 @@ int main(){
 
     int sim = randomValue(SIM_MIN, SIM_MAX);
     for(int i = 0; i < sim; ++i){
+        int trf_min = randomValue(MIN_TRF, MAX_TRF);
+        int trf_max = randomValue(trf_min, MAX_TRF);
 
+        findRange(traffic, trf_min, trf_max);
     }
 
     return 0;
