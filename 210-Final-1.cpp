@@ -7,6 +7,7 @@
 #include <vector>
 using namespace std;
 
+const int MIN_TRF = 1, MAX_TRF = 35;
 
 void outputAll(const map<string,int>& );
 void findMax(const map<string, int>& );
