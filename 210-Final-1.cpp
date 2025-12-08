@@ -40,6 +40,12 @@ void outputAll(const map<string, int>& t){
 }
 
 void findmax(const map<string, int>& t){
-    auto it;
+    int maxTrf = 0;
+    for(auto it = t.begin(); it != t.end(); ++it){
+        if(it->second > maxTrf){
+            maxTrf = it->second;
+        }
+
+    }
 
 }
