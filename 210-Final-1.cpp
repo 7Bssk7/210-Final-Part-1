@@ -76,5 +76,12 @@ int randomValue(int s_min, int s_max){
 }
 
 void findRange(const map<string, int>& t, int r_min, int r_max){
+    cout << "Airports with traffic in range [" << r_min << ", " << r_max << "]:" << endl;
+    for(auto it = t.begin(); it != t.end(); ++it){
+        if((it->second >= r_min) && (it->second <= r_max)){
+            cout << it->first << " " << it->second << endl;
+        }
+
+    }
 
 }
