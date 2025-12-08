@@ -40,16 +40,21 @@ int main(){
         traffic[dest] += 1;
 
     }
+    // Milestone 1: Read all airport from the file and outputs all airport traffic counts
     outputAll(traffic);
 
+    // Milestone 2: Find and output busiest airport(s)
     findMax(traffic);
 
+    // Milestone 3: Outputs all airports in the ranges
     int sim = randomValue(SIM_MIN, SIM_MAX);
     // TEST 
     // findRange(traffic, 5, 8);
 
+    // Ensures function is called with at least two different ranges
     findRange(traffic, 3, 10);
     findRange(traffic, 8, 15);
+    // Runs a simulation with a random ranges
     for(int i = 0; i < sim; ++i){
         int trf_min = randomValue(MIN_TRF, MAX_TRF);
         int trf_max = randomValue(trf_min, MAX_TRF);
