@@ -38,6 +38,9 @@ int main(){
     findMax(traffic);
 
     int sim = randomValue(SIM_MIN, SIM_MAX);
+    // TEST 
+    findRange(traffic, 5, 8);
+
     for(int i = 0; i < sim; ++i){
         int trf_min = randomValue(MIN_TRF, MAX_TRF);
         int trf_max = randomValue(trf_min, MAX_TRF);
