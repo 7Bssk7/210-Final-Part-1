@@ -7,6 +7,9 @@
 #include <vector>
 using namespace std;
 
+
+void outputAll(const map<string,int>& );
+
 int main(){
     ifstream inputFile("210-final-1-FA25.txt");
     string src, dest;
@@ -21,8 +24,14 @@ int main(){
         }
 
     }
-
-
+    outputAll(traffic);
 
     return 0;
+}
+
+void outputAll(const map<string, int>& t){
+    cout << "All airport traffic counts:" << endl;
+    for(auto it = t.begin(); it != t.end(); ++it){
+        cout << it->first << " " << it->second << endl;
+    }
 }
