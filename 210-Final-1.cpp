@@ -51,9 +51,23 @@ int main(){
     }
 
 
-    findMax(traffic);
+    // Milestone 2
+    int maxTrf = 0;
+    for(auto it = traffic.begin(); it != traffic.end(); ++it){
+        if(it->second > maxTrf){
+            maxTrf = it->second;
+        }
+    }
+
+    cout << "\nBusiest airport(s) with count "<< maxTrf << " :" << endl;
+    for(auto it = traffic.begin(); it != traffic.end(); ++it){
+        if(it->second == maxTrf){
+            cout << it->first << " " << it->second << endl;
+        }
+    }
 
 
+    // Milestone 3
     int sim = randomValue(SIM_MIN, SIM_MAX);
 
 
@@ -68,24 +82,6 @@ int main(){
     }
 
     return 0;
-}
-
-
-
-void findMax(const map<string, int>& t){
-    int maxTrf = 0;
-    for(auto it = t.begin(); it != t.end(); ++it){
-        if(it->second > maxTrf){
-            maxTrf = it->second;
-        }
-    }
-
-    cout << "\nBusiest airport(s) with count "<< maxTrf << " :" << endl;
-    for(auto it = t.begin(); it != t.end(); ++it){
-        if(it->second == maxTrf){
-            cout << it->first << " " << it->second << endl;
-        }
-    }
 }
 
 
