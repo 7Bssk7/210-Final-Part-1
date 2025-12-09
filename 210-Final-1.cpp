@@ -4,9 +4,15 @@
 #include <fstream>
 #include <map>
 #include <string>
-#include <vector>
-#include <random>
 using namespace std;
+
+// Constants for possible traffic values 
+const int MIN_TRF = 1, MAX_TRF = 35; 
+// Constants fpr the number of random simulations const 
+int SIM_MIN = 0, SIM_MAX = 3; 
+// Function prototypes 
+int randomValue(int, int); 
+void findRange(const map<string, int>&, int, int);
 
 int main(){
     srand(time(0));
@@ -82,6 +88,29 @@ int main(){
         cout << "Not a single airport falls in this traffic range" << endl;
     }
 
+    
+    int sim = randomValue(SIM_MIN, SIM_MAX);  
+    for(int i = 0; i < sim; ++i){ 
+        int trf_min = randomValue(MIN_TRF, MAX_TRF); 
+        int trf_max = randomValue(trf_min, MAX_TRF); 
+        findRange(traffic, trf_min, trf_max); 
+    }
+
+    // Milestone 4
     return 0;
 }
 
+
+int randomValue(int s_min, int s_max){ 
+    return s_min + rand()% (s_max - s_min + 1); 
+} 
+
+void findRange(const map<string, int>& t, int r_min, int r_max){
+    int count = 0; 
+    cout << "\nAirports with traffic in range [" << r_min << ", " << r_max << "]:" << endl; 
+    for(auto it = t.begin(); it != t.end(); ++it){ 
+        if((it->second >= r_min) && (it->second <= r_max)){
+             cout << it->first << " " << it->second << endl; count += 1; }
+        } 
+        if(count == 0){ cout << "Not a single airport falls in this traffic range" << endl; } 
+}
