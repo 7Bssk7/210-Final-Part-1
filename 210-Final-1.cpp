@@ -8,15 +8,6 @@
 #include <random>
 using namespace std;
 
-
-const int MIN_TRF = 1, MAX_TRF = 35;
-
-const int SIM_MIN = 0, SIM_MAX = 3;
-
-void findMax(const map<string, int>& );
-int randomValue(int, int);
-void findRange(const map<string, int>&, int, int);
-
 int main(){
     srand(time(0));
     ifstream inputFile("210-final-1-FA25.txt");
@@ -66,34 +57,11 @@ int main(){
         }
     }
 
-
     // Milestone 3
-    int sim = randomValue(SIM_MIN, SIM_MAX);
-
-
-
-    findRange(traffic, 3, 10);
-    findRange(traffic, 8, 15);
-
-    for(int i = 0; i < sim; ++i){
-        int trf_min = randomValue(MIN_TRF, MAX_TRF);
-        int trf_max = randomValue(trf_min, MAX_TRF);
-        findRange(traffic, trf_min, trf_max);
-    }
-
-    return 0;
-}
-
-
-int randomValue(int s_min, int s_max){
-    return s_min + rand()% (s_max - s_min + 1);  
-}
-
-void findRange(const map<string, int>& t, int r_min, int r_max){
     int count = 0;
-    cout << "\nAirports with traffic in range [" << r_min << ", " << r_max << "]:" << endl;
-    for(auto it = t.begin(); it != t.end(); ++it){
-        if((it->second >= r_min) && (it->second <= r_max)){
+    cout << "\nAirports with traffic in range [" << 3 << ", " << 10 << "]:" << endl;
+    for(auto it = traffic.begin(); it != traffic.end(); ++it){
+        if((it->second >= 3) && (it->second <= 10)){
             cout << it->first << " " << it->second << endl;
             count += 1;
         }
@@ -101,4 +69,19 @@ void findRange(const map<string, int>& t, int r_min, int r_max){
     if(count == 0){
         cout << "Not a single airport falls in this traffic range" << endl;
     }
+    count = 0;
+
+    cout << "\nAirports with traffic in range [" << 8 << ", " << 15 << "]:" << endl;
+    for(auto it = traffic.begin(); it != traffic.end(); ++it){
+        if((it->second >= 8) && (it->second <= 15)){
+            cout << it->first << " " << it->second << endl;
+            count += 1;
+        }
+    }
+    if(count == 0){
+        cout << "Not a single airport falls in this traffic range" << endl;
+    }
+
+    return 0;
 }
+
