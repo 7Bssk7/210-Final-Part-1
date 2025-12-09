@@ -64,6 +64,9 @@ int main(){
     return 0;
 }
 
+//This function outputs all airports and their traffic counts stored in the map
+//arguments: constant reference to a map, (const map<string,int>& t)
+//returns: nothing. It's a void function, outputs all of the airports and their traffic counts
 void outputAll(const map<string, int>& t){
     cout << "All airport traffic counts:" << endl;
     for(auto it = t.begin(); it != t.end(); ++it){
