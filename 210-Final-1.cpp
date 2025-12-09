@@ -93,6 +93,9 @@ void findMax(const map<string, int>& t){
     }
 }
 
+//This function generates a random integer within the range (from "s_min" to "s_max")
+//arguments: two integers (s_min, s_max)
+//returns: randomly generated integer in the range
 int randomValue(int s_min, int s_max){
     return s_min + rand()% (s_max - s_min + 1);  
 }
