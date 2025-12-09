@@ -13,8 +13,6 @@ const int MIN_TRF = 1, MAX_TRF = 35;
 
 const int SIM_MIN = 0, SIM_MAX = 3;
 
-
-void outputAll(const map<string,int>& );
 void findMax(const map<string, int>& );
 int randomValue(int, int);
 void findRange(const map<string, int>&, int, int);
@@ -46,7 +44,11 @@ int main(){
 
     }
 
-    outputAll(traffic);
+    // Milestone 1
+    cout << "All airport traffic counts:" << endl;
+    for(auto it = traffic.begin(); it != traffic.end(); ++it){
+        cout << it->first << " " << it->second << endl;
+    }
 
 
     findMax(traffic);
@@ -68,12 +70,6 @@ int main(){
     return 0;
 }
 
-void outputAll(const map<string, int>& t){
-    cout << "All airport traffic counts:" << endl;
-    for(auto it = t.begin(); it != t.end(); ++it){
-        cout << it->first << " " << it->second << endl;
-    }
-}
 
 
 void findMax(const map<string, int>& t){
