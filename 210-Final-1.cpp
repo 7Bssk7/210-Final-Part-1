@@ -6,6 +6,8 @@
 #include <string>
 using namespace std;
 
+//I added back the findRange function, since the task specifies that the function must be called at least twice, 
+//even though the use of functions is prohibited
 // Constants for possible traffic values 
 const int MIN_TRF = 1, MAX_TRF = 35; 
 // Constants fpr the number of random simulations const 
@@ -88,7 +90,8 @@ int main(){
         cout << "Not a single airport falls in this traffic range" << endl;
     }
 
-    
+    //I added back the findRange function, since the task specifies that the function must be called at least twice, 
+    //even though the use of functions is prohibited
     int sim = randomValue(SIM_MIN, SIM_MAX);  
     for(int i = 0; i < sim; ++i){ 
         int trf_min = randomValue(MIN_TRF, MAX_TRF); 
@@ -101,6 +104,8 @@ int main(){
 }
 
 
+//I added back the findRange function, since the task specifies that the function must be called at least twice, 
+//even though the use of functions is prohibited
 int randomValue(int s_min, int s_max){ 
     return s_min + rand()% (s_max - s_min + 1); 
 } 
