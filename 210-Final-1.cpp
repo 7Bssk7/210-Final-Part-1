@@ -74,6 +74,9 @@ void outputAll(const map<string, int>& t){
     }
 }
 
+//This function finds and outputs the busiest airport(s) with the maximum traffic count
+//arguments: constant reference to a map, (const map<string,int>& t)
+//returns: nothing. It's a void function, outputs the busiest airport(s) with the maximum traffic count
 void findMax(const map<string, int>& t){
     int maxTrf = 0;
     for(auto it = t.begin(); it != t.end(); ++it){
